@@ -5,7 +5,6 @@
   vars:
     repo_root_dir: "{{ playbook_dir }}/../../"
     operator_dir: "{{ repo_root_dir }}/operator"
-
     generated_dir: "{{ repo_root_dir }}/generated/installer"
   
     filename: "{{ 'ibm-spectrum-scale-csi-operator.test.yaml' if travis_testing else 'ibm-spectrum-scale-csi-operator.yaml' }}"
