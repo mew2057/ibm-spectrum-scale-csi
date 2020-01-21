@@ -3,19 +3,19 @@ Operator Lifecycle Manager (OLM)
 
 .. note:: For OpenShift environments, replace ``kubectl`` with  ``oc``
 
+
+The operator is currently available on `OperatorHub <https://operatorhub.io/operator/ibm-spectrum-scale-csi-operator>`_.
+
 1. Install OLM:
 
 .. code-block:: bash
+  
+  curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.13.0/install.sh | bash -s 0.13.0
 
-    curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/0.11.0/install.sh | bash -s 0.11.0
-
-
-2. Download the CSI Operator ``.yaml`` and apply
+2. Download the CSI  ``.yaml`` and apply
 
 .. code-block:: bash
 
-    curl https://raw.githubusercontent.com/IBM/ibm-spectrum-scale-csi-operator/master/stable/ibm-spectrum-scale-csi-operator-bundle/operators/ibm-spectrum-scale-csi-operator/deploy/olm-scripts/operator-source.yaml > operator-source.yaml
-
-    kubectl apply -f operator-source.yaml
+  kubectl create -f https://operatorhub.io/install/ibm-spectrum-scale-csi-operator.yaml
 
 
