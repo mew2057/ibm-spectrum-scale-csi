@@ -27,7 +27,7 @@ def change_image(operator=DEFAULT_DEPLOY, output=DEFAULT_DEPLOY, image=DEFAULT_I
       containers[i]["imagePullPolicy"] = pullpolicy
 
     with open(output, 'w') as outfile:
-      yaml.dump(opobj, outfile, default_flow_style=False)
+      yaml.dump(opobj, outfile, default_flow_style=True)
 
 
 def main(args):
