@@ -57,7 +57,7 @@ env:
     - PATH=/opt/python/3.6.7/bin:$PATH
     - GO111MODULE=on
     - KUBE_VERSION="v1.16.2"
-    - OP_VER="v0.11.0"
+    - OP_VER="v0.17.0"
     - OPERATOR_LOCAL_IMAGE="csi.ibm.com/${REPO_NAME_OPERATOR}:testing"
     - OPERATOR_SDK="https://github.com/operator-framework/operator-sdk/releases/download/${OP_VER}/operator-sdk-${OP_VER}-x86_64-linux-gnu"
     - OLM_MANIFEST="${BUILD_DIR_OPERATOR}/deploy/olm-catalog/${REPO_NAME_OPERATOR}/"
@@ -211,7 +211,7 @@ jobs:
     - stage: test
       name: "Test - Operator: scorecard and molecule"
       before_install:
-        - pip install pyyaml molecule openshift docker jmespath kubernetes-validate
+        - pip install docker molecule ansible-lint yamllint flake8 openshift jmespath kubernetes-validate
         - ${TRAVIS_BUILD_DIR}/tools/scripts/ci/install_minikube.sh
         - ${TRAVIS_BUILD_DIR}/tools/scripts/ci/install_operator-sdk.sh
         - kubectl version
@@ -226,7 +226,8 @@ jobs:
         - molecule test -s test-local
         # sc
         - python hacks/clear_finalizers.py
-        - operator-sdk scorecard --config .osdk-scorecard.yaml
+        - ls -ltra deploy/olm-catalog/ibm-spectrum-scale-csi-operator/1.1.0
+        - operator-sdk scorecard --config .osdk-scorecard.yaml --verbose
         - python  hacks/clear_finalizers.py --restore
     
 

@@ -2,6 +2,7 @@
 scorecard:
   init-timeout: 120
   output: json
+  bundle: "deploy/olm-catalog/ibm-spectrum-scale-csi-operator/"
   plugins:
     - basic:
         namespace: "ibm-spectrum-scale-csi-driver"
@@ -12,4 +13,4 @@ scorecard:
         cr-manifest:
           - "deploy/crds/csiscaleoperators.csi.ibm.com.cr.yaml"
         csv-path: "deploy/olm-catalog/ibm-spectrum-scale-csi-operator/1.1.0/ibm-spectrum-scale-csi-operator.v1.1.0.clusterserviceversion.yaml"
-# TODO add custom test.
+        proxy-pull-policy: "Never"
