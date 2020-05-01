@@ -78,6 +78,13 @@ spec:
               memory: 50Mi
           securityContext:
             privileged: false
+            runAsNonRoot: true
+            hostNetwork: false
+            hostPID: false
+            hostIPC: false
+            runAsUser: 1001
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
@@ -225,11 +232,11 @@ metadata:
     release: ibm-spectrum-scale-csi-operator
   name: csiscaleoperators.csi.ibm.com
 spec:
-  additionalPrinterColumns:
-    - JSONPath: .status.conditions[?(@.type="Ready")].status
-      description: The Nginx Status
-      name: Ready
-      type: string
+  #additionalPrinterColumns:
+  #  - JSONPath: .status.conditions[?(@.type="Ready")].status
+  #    description: The Nginx Status
+  #    name: Ready
+  #    type: string
   group: csi.ibm.com
   names:
     kind: CSIScaleOperator
