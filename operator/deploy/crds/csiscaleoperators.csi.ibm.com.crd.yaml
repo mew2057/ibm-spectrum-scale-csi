@@ -21,9 +21,6 @@ spec:
     plural: csiscaleoperators
     singular: csiscaleoperator
   scope: Namespaced
-  subresources:
-    status: {}
-  version: 'v1'
   versions:
     - name: "v1"
       served: true
