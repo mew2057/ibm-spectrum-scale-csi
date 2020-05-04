@@ -95,8 +95,8 @@ jobs:
       script:
         - golangci-lint run
     
-    stage: lint
-    - name: "Lint - Operator: run bundle validator"
+    - stage: lint
+      name: "Lint - Operator: run bundle validator"
       script:
         - pip install ansible
         # Testing that the generated files match the deploy/*.yaml files, it they do not match, fail Travis
