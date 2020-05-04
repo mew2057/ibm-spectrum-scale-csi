@@ -28,5 +28,3 @@ Issues will be addressed as team availability permits.
 
 We welcome contributions to this project, see [Contributing](CONTRIBUTING.md) for more details.
 
-
-
