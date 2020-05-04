@@ -44,6 +44,10 @@ spec:
             privileged: true
 {% endif %}
           image: "{{ attacher }}"
+{% if attacherPullSecret is defined %}
+        imagePullSecrets:
+          - name: "{{attacherPullSecret}}"
+{% endif %}
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"

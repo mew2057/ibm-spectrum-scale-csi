@@ -162,10 +162,22 @@ spec:
                     on secret change.
                   type: integer
                 trigger:
-                  description: A generic trigger to be used in kickin off the ansible operator.
+                  description: A generic trigger to be used in kicking off the ansible operator.
                   type: string
                 spectrumScale:
                   description: Image name for the csi spectrum scale plugin container.
+                  type: string
+                attacherPullSecret:
+                  description: Pull secret for attacher image.
+                  type: string
+                provisionerPullSecret:
+                  description: Pull secret for provisioner image.
+                  type: string
+                spectrumScalePullSecret:
+                  description: Pull secret for spectrum scale image.
+                  type: string
+                registrarPullSecret:
+                  description: Pull secret for driver registrar image.
                   type: string
               required:
                 - scaleHostpath

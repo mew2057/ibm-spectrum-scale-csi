@@ -37,6 +37,15 @@ spec:
       serviceAccount: "{{ productName }}-node"
       hostNetwork: true
       containers:
+{% if spectrumScalePullSecret is defined  or registrarPullSecret is defined %}
+        imagePullSecrets:  
+{% if spectrumScalePullSecret is defined %}
+          - name: "{{spectrumScalePullSecret}}"
+{% endif %}
+{% if registrarPullSecret is defined %}
+          - name: "{{registrarPullSecret}}"
+{% endif %}
+{% endif %}
         - name: driver-registrar
 {% if 'apps.openshift.io' in api_groups %}
           securityContext:

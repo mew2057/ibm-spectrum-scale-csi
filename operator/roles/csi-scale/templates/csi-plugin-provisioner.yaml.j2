@@ -56,6 +56,10 @@ spec:
           volumeMounts:
             - name: socket-dir
               mountPath: /var/lib/kubelet/plugins/ibm-spectrum-scale-csi
+{% if provisionerPullSecret is defined %}
+        imagePullSecrets:
+          - name: "{{provisionerPullSecret}}"
+{% endif %}
       volumes:
         - name: socket-dir
           hostPath:

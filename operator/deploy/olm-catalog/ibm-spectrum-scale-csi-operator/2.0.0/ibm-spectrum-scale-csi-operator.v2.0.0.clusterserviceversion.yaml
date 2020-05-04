@@ -73,6 +73,30 @@ spec:
             name: ""
             version: v1
         specDescriptors:
+          - description: Pull secret for attacher image.
+            displayName: Attacher Pull Secret
+            path: attacherPullSecret
+            x-descriptors:
+              - urn:alm:descriptor:com.tectonic.ui:label
+
+          - description: Pull secret for provisioner image.
+            displayName: Provisioner Pull Secret
+            path: provisionerPullSecret
+            x-descriptors:
+              - urn:alm:descriptor:com.tectonic.ui:label
+
+          - description: Pull secret for spectrum scale image.
+            displayName: Spectrum Scale Pull Secret
+            path: spectrumScalePullSecret
+            x-descriptors:
+              - urn:alm:descriptor:com.tectonic.ui:label
+
+          - description: Pull secret for driver registrar image.
+            displayName: Registrar Pull Secret
+            path: registrarPullSecret
+            x-descriptors:
+              - urn:alm:descriptor:com.tectonic.ui:label
+
           - description: Node selector for provisioner sidecar.
             displayName: Provisioner Node Selector
             path: provisionerNodeSelector
@@ -166,10 +190,6 @@ spec:
             x-descriptors:
               - urn:alm:descriptor:com.tectonic.ui:booleanSwitch
           - description: A string specifying a secret resource name.
-            displayName: Kubernetes Secret Name
-            path: clusters.secrets
-            x-descriptors:
-              - urn:alm:descriptor:com.tectonic.ui:label
           - description: A collection of targets for REST calls.
             displayName: REST API
             path: clusters.restApi

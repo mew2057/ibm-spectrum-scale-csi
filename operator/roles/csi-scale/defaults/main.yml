@@ -42,3 +42,10 @@ nodeMapping: "{{ _csi_ibm_com_csiscaleoperator.spec.nodeMapping | default([])}}"
 
 # State of driver in the cluster (might not be needed).
 state: present
+
+#  Pull Secrets
+attacherPullSecret: "{{attacher_pull_secret}}"
+provisionerPullSecret: "{{provisioner_pull_secret}}"
+spectrumScalePullSecret: "{{spectrum_scale_pull_secret}}"
+registrarPullSecret: "{{registrar_pull_secret}}"
+
