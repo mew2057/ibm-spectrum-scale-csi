@@ -23,7 +23,7 @@ metadata:
     capabilities: Basic Install
     categories: Storage
     certified: 'false'
-    containerImage: quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-operator:v2.0.0
+    containerImage: quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-operator:v1.1.0
     createdAt: Mon Feb 17 05:46:00 PST 2020
     description: An operator for deploying and managing the IBM CSI Spectrum Scale
       Driver.
@@ -34,7 +34,7 @@ metadata:
     app.kubernetes.io/managed-by: ibm-spectrum-scale-csi-operator
     app.kubernetes.io/name: ibm-spectrum-scale-csi-operator
     release: ibm-spectrum-scale-csi-operator
-  name: ibm-spectrum-scale-csi-operator.v2.0.0
+  name: ibm-spectrum-scale-csi-operator.v1.1.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -378,7 +378,7 @@ spec:
                       fieldPath: metadata.name
                 - name: OPERATOR_NAME
                   value: ibm-spectrum-scale-csi-operator
-                image: quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-operator:v2.0.0
+                image: quay.io/ibm-spectrum-scale/ibm-spectrum-scale-csi-operator:v1.1.0
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   exec:
