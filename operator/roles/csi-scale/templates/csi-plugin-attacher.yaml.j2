@@ -45,7 +45,7 @@ spec:
 {% endif %}
           image: "{{ attacher }}"
           args:
-            - "--v=5"
+            - "--driverMinloglevel={{driverMinloglevel}}"
             - "--csi-address=$(ADDRESS)"
             - "--resync=10m" # Added
             - "--timeout=2m"

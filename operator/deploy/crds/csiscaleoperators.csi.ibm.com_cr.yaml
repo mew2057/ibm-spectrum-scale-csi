@@ -11,6 +11,11 @@ metadata:
     release: ibm-spectrum-scale-csi-operator
 status: {}
 spec:
+
+# The minlogLevel level for the driver ( 0 - INFO, 1 - WARNING, 2 - ERROR, 3 - FATAL)
+# =================================================================================
+  driverMinloglevel: 0
+
 # The path to the GPFS file system mounted (either remote/local) on the local Spectrum Scale API host machine.
 # ==================================================================================
   scaleHostpath: "< GPFS FileSystem Path >"

@@ -44,9 +44,9 @@ spec:
 {% endif %}
           image: "{{ driverRegistrar }}"
           args:
-            - "--v=5"
             - "--csi-address=$(ADDRESS)"
             - "--kubelet-registration-path=$(DRIVER_REG_SOCK_PATH)"
+            - "--driverMinloglevel={{driverMinloglevel}}"
           env:
             - name: ADDRESS
               value: /var/lib/kubelet/plugins/spectrumscale.csi.ibm.com/csi.sock
@@ -68,7 +68,7 @@ spec:
           args :
             - "--nodeid=$(NODE_ID)"
             - "--endpoint=$(CSI_ENDPOINT)"
-            - "--v=5"
+            - "--driverMinloglevel={{driverMinloglevel}}"
           env:
             - name: NODE_ID
               valueFrom:
